@@ -70,3 +70,13 @@ def demo():  # demonstration of basic turtle commands
 
 
 demo()
+
+def square(length):
+    tim = turtle.Turtle()
+    tim.speed(1)
+    for x in range(8):
+        tim.forward(length)
+        tim.left(90)
+        print("Tim is now at", tom.position())
+    tim.home()  # return to the original position in the middle of the window
+    turtle.done()
