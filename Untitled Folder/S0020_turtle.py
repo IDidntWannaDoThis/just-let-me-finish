@@ -66,17 +66,20 @@ def demo():  # demonstration of basic turtle commands
     tom.right(90)  # turn 90 degrees right
     tom.forward(333)
     tom.home()  # return to the original position in the middle of the window
-    turtle.done()  # keeps the turtle window open after the program is done
-
-
-demo()
+    turtle.done()  #keeps the turtle window open after the program is done
 
 def square(length):
     tim = turtle.Turtle()
+    print(type(tim))
     tim.speed(1)
-    for x in range(8):
+    for x in range(4):
         tim.forward(length)
         tim.left(90)
-        print("Tim is now at", tom.position())
+        print("Tim is now at", tim.position())
     tim.home()  # return to the original position in the middle of the window
     turtle.done()
+
+
+
+
+square(100)
