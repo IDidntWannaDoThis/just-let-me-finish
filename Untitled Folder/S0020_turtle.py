@@ -46,8 +46,7 @@ When your program is complete, push it to your github repository.
 Then send this Teams message to your teacher: <filename> done
 Thereafter go on with the next file.
 """
-
-
+import random
 import turtle    # this imports a library called "turtle". A library is (someone else's) python code, that you can use in your own program.
 
 
@@ -68,8 +67,8 @@ def demo():  # demonstration of basic turtle commands
     tom.home()  # return to the original position in the middle of the window
     turtle.done()  #keeps the turtle window open after the program is done
 
-def square(length):
-    tim = turtle.Turtle()
+def square(length,body):
+    tim = body
     print(type(tim))
     tim.speed(1)
     for x in range(4):
@@ -82,18 +81,37 @@ def square(length):
         tim.left(90)
         print("Tim is now at", tim.position())
 
-
-    tim.home()  # return to the original position in the middle of the window
-    turtle.done()
-
 def isonscreen(body):
     if body.getscreen().window_width() / 2 > body.xcor() and body.getscreen().window_height() / 2 >  body.ycor():
         return True
     else:
         return False
 
+def many_square(reapeated,size,distrnce,body):
+    for x in range(reapeated):
+        square(random.randint(0,size,),body)
+        body.penup()
+        body.right(random.randint(0, 360))
+        body.forward(distrnce)
+        body.pendown()
+
+
+def spyral(size,body):
+    for x in range(size) :
+        body.forward(10*(x+1))
+        body.left(90)
+
+def star(points,body):
+    for x in range(points):
+        body.forward(100)
+        body.left(720 / points)
 
 
 
-square(500)
+
+
+
+
+star(5,turtle.Turtle())
+turtle.done()
 
