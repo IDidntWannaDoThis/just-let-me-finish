@@ -74,12 +74,26 @@ def square(length):
     tim.speed(1)
     for x in range(4):
         tim.forward(length)
+        if not isonscreen(tim):
+            while not isonscreen(tim):
+                tim.backward(1)
+                print("Tim is now at", tim.position())
+                tim.backward(1)
         tim.left(90)
         print("Tim is now at", tim.position())
+
+
     tim.home()  # return to the original position in the middle of the window
     turtle.done()
 
+def isonscreen(body):
+    if body.getscreen().window_width() / 2 > body.xcor() and body.getscreen().window_height() / 2 >  body.ycor():
+        return True
+    else:
+        return False
 
 
 
-square(100)
+
+square(500)
+
