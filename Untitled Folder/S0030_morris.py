@@ -37,27 +37,13 @@ Thereafter go on with the next file.
 
 
 def new_turn(stats):
-    print(f"turn: {stats['turn']}.")
-    print(f"you have {stats['energy']} energy.")
-    print(f"you have {stats['wisky']} wisky, and you are {stats['hangover']}% drunk.")
-    print(f"thirst: {stats['thirst']}")
-    print(f"gold: {stats['gold']}")
-    print(f"hunger: {stats['hunger']}")
     print()
-    print("you can:")
-    print("sleep")
-    print("mine")
-    print("eat")
-    print("buy_whisky")
-    print("drink")
-
-    print("what will you do:")
+    print(stats)
     action = CP(stats)
     if action == "sleep":
         stats['energy'] += 10
         stats['thirst'] += 1
         stats['hunger'] += 1
-        stats['gold'] = 0
 
         print("you had a good nights sleep")
     elif action == "mine":
@@ -130,18 +116,18 @@ def CP(stats):
     if stats['turn'] == 1000:
         return "mine"
 
-    elif stats['wisky'] < 1 and stats['gold'] > 0:
-        return "buy_whisky"
-    elif stats['thirst'] > 70:
-        if stats['hunger'] > 70 and stats['gold'] > 1:
+    elif stats['thirst'] > 90:
+        if stats['hunger'] > 90 and stats['gold'] > 1:
             return "eat"
         elif stats['wisky'] >= 1:
             return "drink"
         else:
             return "mine"
-    elif stats['hunger'] > 70 and stats['gold'] > 1:
+    elif stats['hunger'] > 90 and stats['gold'] > 1:
         return "eat"
-    elif stats['energy'] < 20:
+    elif stats['wisky'] < 1 and stats['gold'] > 0:
+        return "buy_whisky"
+    elif stats['energy'] < 25:
         return "sleep"
     else:
         return "mine"
