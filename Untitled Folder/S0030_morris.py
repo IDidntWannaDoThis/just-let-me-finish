@@ -52,11 +52,11 @@ def new_turn(stats):
     print("drink")
 
     print("what will you do:")
-    action = input()
+    action = CP(stats)
     if action == "sleep":
-        stats['energy'] =+ 10
-        stats['thirst'] =+ 1
-        stats['hunger'] =+ 1
+        stats['energy'] += 10
+        stats['thirst'] += 1
+        stats['hunger'] += 1
         stats['gold'] = 0
 
         print("you had a good nights sleep")
@@ -68,7 +68,7 @@ def new_turn(stats):
         print("you went mining and found some gold")
     elif action == "eat":
         if stats['gold'] >= 2:
-            stats['energy'] -=  5
+            stats['energy'] -= 5
             stats['gold'] -= 2
             stats['hunger'] -= 20
             stats['thirst'] -= 5
@@ -77,8 +77,8 @@ def new_turn(stats):
             print("you don't have Enough gold")
     elif action == "buy_whisky":
         if stats['gold'] >= 1:
-            stats['energy'] -=  5
-            stats['gold'] -=  1
+            stats['energy'] -= 5
+            stats['gold'] -= 1
             stats['wisky'] += 1
             stats['thirst'] += 1
             print("you bought a bottle of whisky")
@@ -88,7 +88,7 @@ def new_turn(stats):
     elif action == "drink":
 
         if stats['wisky'] >= 1:
-            stats['energy'] -=  5
+            stats['energy'] -= 5
             stats['wisky'] -= 1
             stats['thirst'] -= 15
             stats['hunger'] -= 1
@@ -97,13 +97,16 @@ def new_turn(stats):
             print("you don't have any whisky")
     else:
         return
+    if stats['hunger'] < 0:
+        stats['hunger'] = 0
+
+    if stats['thirst'] < 0:
+        stats['thirst'] = 0
 
     if not stats['hangover'] <= 0:
         stats['hangover'] = - 10
-    stats['turn'] =+ 1
-    if not deathcheck(stats):
-        new_turn(stats)
-
+    stats['turn'] += 1
+    return stats
 def deathcheck(stats):
     if stats['thirst'] >= 100:
         print("you died of thirst")
@@ -120,7 +123,34 @@ def deathcheck(stats):
     else:
         death = False
 
-    return
+    return death
 
 
-new_turn({"turn": 1,"energy":100, "thirst": 0, "wisky": 0, "gold": 0, "hunger":0 ,"hangover": 0})
+def CP(stats):
+    if stats['turn'] == 1000:
+        return "mine"
+
+    elif stats['wisky'] < 1 and stats['gold'] > 0:
+        return "buy_whisky"
+    elif stats['thirst'] > 70:
+        if stats['hunger'] > 70 and stats['gold'] > 1:
+            return "eat"
+        elif stats['wisky'] >= 1:
+            return "drink"
+        else:
+            return "mine"
+    elif stats['hunger'] > 70 and stats['gold'] > 1:
+        return "eat"
+    elif stats['energy'] < 20:
+        return "sleep"
+    else:
+        return "mine"
+
+def life(stats):
+    while stats['turn'] <= 1000 and not deathcheck(stats):
+        stats = new_turn(stats)
+
+    print(f"you died with {stats['gold']} gold")
+
+
+life({"turn": 1,"energy":100, "thirst": 0, "wisky": 0, "gold": 0, "hunger":0 ,"hangover": 0,})
