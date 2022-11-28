@@ -23,16 +23,24 @@ Then send this Teams message to your teacher: <filename> done
 Thereafter go on with the next file.
 """
 
-def drive_car():
-    print("wroom")  # print a sound
+class Vehicle:  # this starts the definition of a class
 
 
-car1_wheels = 4  # define number of wheels for car1
-car1_speed = 5  # define maximum speed for car1
-car2_wheels = 4  # define number of wheels for car2
-car2_speed = 7  # define maximum speed for car2
+    def __init__(self, wheels, max_speed):
+        self.wheels = wheels
+        self.max_speed = max_speed
+    def drive(self):  # This is a method. A method is a function that belongs to a class.
+        print("WROOOOOOOOM!")
 
-print("wheels:", car1_wheels, ". max speed", car1_speed) # print out the properties of car1
-print("wheels:", car2_wheels, ". max speed", car2_speed)  # print out the properties of car2
 
-drive_car()  # call drive_car
+car1 = Vehicle(4,160)  # car1 is now defined as an object of type Vehicle
+car1.wheels = 4  # the attribute wheels is now defined for the object car1 of class Vehicle
+car1.max_speed = 160  # the attribute max_speed is now defined for the object car1 of class Vehicle
+
+car2 = Vehicle(8,100)
+car2.wheels = 8
+car2.max_speed = 100
+
+print("wheels", car1.wheels, "maximum speed", car1.max_speed)  # print out the attributes of car1
+print("wheels", car2.wheels, "maximum speed", car2.max_speed)  # print out the attributes of car2
+car1.drive()
