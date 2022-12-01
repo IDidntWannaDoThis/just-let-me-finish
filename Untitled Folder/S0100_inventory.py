@@ -35,7 +35,6 @@ class inventorycore():
     def rerun(self,length = 0):
         length += 1
         for i in range(length + 1):
-            self.layercalc()
             layer = self.layercalc()
             self.current_level += 1
             print(layer)
@@ -43,13 +42,17 @@ class inventorycore():
     def layercalc(self):
         numbers = dict()
         num = 0
+        last = 1
         while not last == 0:
             try:
                 self.inventory[self.inventory[num]] += 1
             except:
                 self.inventory[self.inventory[num]] = 0
             numbers[num] = self.inventory[num]
-            last = self.inventory[num]
+            try:
+                last = self.inventory[num]
+            except:
+                last = 0
 
 
 
