@@ -32,13 +32,6 @@ class inventorycore():
         self.inventory = dict()
         self.current_level = 0
 
-    def rerun(self,length = 0):
-        length += 1
-        for i in range(length + 1):
-            layer = self.layercalc()
-            self.current_level += 1
-            print(layer)
-
     def layercalc(self):
         numbers = dict()
         num = 0
@@ -57,6 +50,15 @@ class inventorycore():
 
 
         return numbers
+
+    def rerun(self,length = 0):
+        length += 1
+        for i in range(length + 1):
+            layer = self.layercalc()
+            self.current_level += 1
+            print(layer)
+
+
 
 
 iner = inventorycore
