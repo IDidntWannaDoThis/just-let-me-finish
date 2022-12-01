@@ -29,23 +29,17 @@ Thereafter go on with the next file.
 
 class inventorycore():
     def __init__(self):
-        self.inventory = dict()
+        self.inventory = list()
         self.current_level = 0
 
     def layercalc(self):
-        numbers = dict()
+        numbers = list()
         num = 0
         last = 1
         while not last == 0:
-            try:
-                self.inventory[self.inventory[num]] += 1
-            except:
-                self.inventory[num] = 0
-            numbers[num] = self.inventory[num]
-            try:
-                last = self.inventory[num]
-            except:
-                last = 0
+            last = self.inventory.count(num)
+            numbers.append(self.inventory.count(num))
+            self.inventory.append(self.inventory.count(num))
             num += 1
 
 
@@ -53,7 +47,6 @@ class inventorycore():
         return numbers
 
     def rerun(self,length = 0):
-        length += 1
         for i in range(length + 1):
             layer = self.layercalc()
             self.current_level += 1
@@ -64,4 +57,4 @@ class inventorycore():
 
 iner = inventorycore()
 
-iner.rerun(50)
+iner.rerun(10)
