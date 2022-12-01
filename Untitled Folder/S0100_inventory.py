@@ -61,6 +61,6 @@ class inventorycore():
 
 
 
-iner = inventorycore
+iner = inventorycore()
 
 iner.rerun(4)
