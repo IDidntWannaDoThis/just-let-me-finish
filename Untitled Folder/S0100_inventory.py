@@ -40,12 +40,13 @@ class inventorycore():
             try:
                 self.inventory[self.inventory[num]] += 1
             except:
-                self.inventory[self.inventory[num]] = 0
+                self.inventory[num] = 0
             numbers[num] = self.inventory[num]
             try:
                 last = self.inventory[num]
             except:
                 last = 0
+            num += 1
 
 
 
@@ -63,4 +64,4 @@ class inventorycore():
 
 iner = inventorycore()
 
-iner.rerun(4)
+iner.rerun(50)
