@@ -18,7 +18,10 @@ When your program is complete, push it to your github repository.
 Then send this Teams message to your teacher: <filename> done
 Thereafter go on with the next file.
 """
-class miner:
+
+
+class Miner:
+
         def __init__(self,):
             self.exaust = 0
             self.whisky = 0
@@ -26,7 +29,7 @@ class miner:
             self.hunger = 0
             self.gold = 0
             self.age = 0
-        
+
         def sleep(self):
             self.exaust -= 10
             self.thirst += 1
@@ -99,6 +102,7 @@ class miner:
 
             return death
 
+
 def CP(miner):
     if miner.thirst > 90:
         if miner.hunger > 90 and miner.gold > 1:
@@ -116,10 +120,11 @@ def CP(miner):
     else:
         miner.mine()
 
+
 def life(miner):
     while miner.age <= 1000 and not miner.deathcheck():
         CP(miner)
 
         print(f"you died with {miner.gold} gold")
-morris = miner()
+morris = Miner()
 life(morris)
