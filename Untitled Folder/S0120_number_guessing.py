@@ -25,12 +25,52 @@ import random
 class numguessgame():
     def __init__(self):
         self.numbers = [random.randint(0,9), random.randint(0,9), random.randint(0,9), random.randint(0,9)]
+        self.win = False
+        self.rounds = 0
 
     def rond(self):
-        print()
+        print("what numbers are in the string")
+        number = input()
+        for i in range(4):
+            if number.__getitem__(i) == str(self.numbers[i]):
+                yield "true"
+            else:
+                if self.numbers.__contains__(int(number.__getitem__(i))):
+                    yield "else"
+                else:
+                    yield "false"
+
+    def wincheck(self, score):
+        truescore = 0
+        for part in score:
+            if part == "true":
+                truescore += 1
+        if truescore == 4:
+            return True
+        else:
+            return False
+
+
+    def play(self):
+        if self.win:
+            print(f"this game was won in {self.rounds} rounds")
+        while not self.win:
+            self.rounds += 1
+            level = list(self.rond())
+            print(level)
+            self.win = self.wincheck(level)
+        print(self.numbers)
+        print(f"you won in {self.rounds} turns")
+
+
+    def restart(self):
+        self.numbers = [random.randint(0, 9), random.randint(0, 9), random.randint(0, 9), random.randint(0, 9)]
+        self.win = False
+        self.rounds = 0
 
 
 
 numguessgame1 = numguessgame()
-
-print(numguessgame1.numbers)
+numguessgame1.play()
+numguessgame1.restart()
+numguessgame1.play()
