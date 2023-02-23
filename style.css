@@ -1,0 +1,247 @@
+@font-face {
+    font-family: mukta;
+    src: url(font/Mukta/Mukta-Bold.ttf);
+}
+nav
+{
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+}
+body
+{
+    display: flex;
+    flex-direction: column;
+    align-items: stretch; 
+    font-family:mukta;
+}
+.top
+{
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: url("materialer/hero-02.jpg");
+    height: 15cm;
+    background-size: cover;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 90%, 55% 90%, 50% 100%, 45% 90%, 0 90%);
+}
+.prududucts
+{   
+    margin-top: -1.5cm;
+    background-color: white;
+    min-height: 15cm;
+}
+.top p
+{
+    color: whitesmoke;
+}
+.top h1
+{
+    color: whitesmoke;
+    font-size: 1cm;
+}
+.about
+{
+    margin-top: -1.5cm;
+    background-color: rgb(226, 212, 53);
+    min-height: 15cm;
+    clip-path: polygon(50% 1.5cm, 55% 0, 100% 0, 100% 100%, 55% 100%, 50% 100%, 45% 100%, 0 100%, 0 0, 45% 0);
+}
+.eshop
+{
+    margin-top: -1.5cm;
+    background-color: rgb(25, 127, 34);
+    min-height: 15cm;
+    clip-path: polygon(50% 1.5cm, 55% 0, 100% 0, 100% 100%, 55% 100%, 50% 100%, 45% 100%, 0 100%, 0 0, 45% 0);
+}
+body
+{
+    background-color: black;
+}
+.prududucts > div 
+{
+    padding: 1.8cm;
+    text-align: center;
+}
+.prududucts > div > div
+{   
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    
+}
+.prududucts > div > div > DIV
+{   
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: stretch;
+    text-align: center;
+    
+}
+.about > div
+{
+    padding: 1.8cm;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+.about > div > h1
+{
+    text-align: center;
+    font-size: 4cm;
+    padding: 0;
+}
+.about > div > img
+{
+    width: 5cm;
+}
+p
+{
+    font-size: x-large;
+}
+.eshop > div
+{
+    padding: 1.8cm;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+
+}
+.delivery
+{   
+    margin-top: -1.5cm;
+    background-color: white;
+    min-height: 15cm;
+    clip-path: polygon(50% 1.5cm, 55% 0, 100% 0, 100% 100%, 55% 100%, 50% 100%, 45% 100%, 0 100%, 0 0, 45% 0);
+}
+.delivery > div
+{
+    padding: 1.8cm;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+.customers
+{
+    margin-top: -1.5cm;
+    background-color: rgb(226, 212, 53);
+    clip-path: polygon(50% 1.5cm, 55% 0, 100% 0, 100% 100%, 55% 100%, 50% 100%, 45% 100%, 0 100%, 0 0, 45% 0);
+}
+.customers > div
+{
+    padding: 2cm;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+.bottom
+{
+    color: white;
+    font-size: xx-large;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: url("materialer/budbil1.jpg");
+    background-size:cover;
+    margin-top: -1.5cm;
+    min-height: 15cm;
+    clip-path: polygon(50% 1.5cm, 55% 0, 100% 0, 100% 100%, 55% 100%, 50% 100%, 45% 100%, 0 100%, 0 0, 45% 0);
+}
+footer
+{
+    margin-top: -1.5cm;
+    background-color: rgb(27, 27, 26);
+    min-height: 15cm;
+    clip-path: polygon(50% 1.5cm, 55% 0, 100% 0, 100% 100%, 55% 100%, 50% 100%, 45% 100%, 0 100%, 0 0, 45% 0);
+}
+footer > div
+{
+    padding: 1.8cm;
+    color: white;
+}
+footer > div > h1
+{
+    text-align: center;
+}
+footer > div > section
+{
+    display: flex;
+    flex-direction: column;
+
+}
+footer > div > section > div >p
+{
+    line-height: 10%;
+}
+footer > div > section > div >h3
+{
+    color: greenyellow;
+    line-height: 10%;
+}
+footer > div > div > img
+{
+    
+    clip-path: inset(0 0 51% 0);
+
+
+}
+footer > div > div
+{
+    display: flex;
+    justify-content: center;
+    margin-top: 1cm;
+}
+a
+{
+    background-color:black;
+    color: white;
+    padding: 10px;
+}
+@media screen and (min-width: 700px)
+{
+    .prududucts > div > div
+    {   
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: stretch;
+
+        
+    }
+
+    .prududucts > div > div > DIV
+    {   
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: stretch;
+        text-align: center;
+        
+        
+    }
+    .customers > div
+    {
+        padding: 1.8cm;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+    }
+}
