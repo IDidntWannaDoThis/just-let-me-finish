@@ -245,4 +245,12 @@ a
         align-items: center;
 
     }
+    .customers > div
+    {
+        padding: 2cm;
+        display: grid;
+        grid-template-columns:auto auto ;
+        grid-template-rows:auto auto ;
+
+    }
 }
