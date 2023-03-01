@@ -252,6 +252,14 @@ ul
 {
     font-size: x-large;
 }
+.navigation 
+{
+    display: none;
+}
+nav .look:checked .navigation
+{
+    display: block;
+}
 @media screen and (min-width: 720px)
 {
     .prududucts > div > div
