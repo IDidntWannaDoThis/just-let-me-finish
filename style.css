@@ -30,7 +30,7 @@ body
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-image: url("materialer/hero-02.jpg");
+    background-image: url("Materialer/hero-02.jpg");
     height: 15cm;
     background-size: cover;
     clip-path: polygon(0% 0%, 100% 0%, 100% 90%, 55% 90%, 50% 100%, 45% 90%, 0 90%);
@@ -163,7 +163,7 @@ p
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-image: url("materialer/budbil1.jpg");
+    background-image: url("Materialer/budbil1.jpg");
     background-size:cover;
     margin-top: -1.5cm;
     min-height: 15cm;
